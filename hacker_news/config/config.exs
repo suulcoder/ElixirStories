@@ -13,10 +13,10 @@ config :hacker_news,
 # Configures the endpoint
 config :hacker_news, HackerNewsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "bstJn82Nepo9WKxEtB+A5/0324p9G76Q8uV8KfwEbwdT1/ABn5fHCied6z2qZ+ns",
+  secret_key_base: "Axf15qR9r1Xe7e/dOYoKQKxzaUN+aRAopGeisddCf9BpDK+j2PdEhVuKqZnug/jr",
   render_errors: [view: HackerNewsWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: HackerNews.PubSub,
-  live_view: [signing_salt: "lCBElVOA"]
+  live_view: [signing_salt: "QawNUtLx"]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -14,9 +14,10 @@ defmodule HackerNews.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: HackerNews.PubSub},
       # Start the Endpoint (http/https)
-      HackerNewsWeb.Endpoint
+      HackerNewsWeb.Endpoint,
       # Start a worker by calling: HackerNews.Worker.start_link(arg)
-      # {HackerNews.Worker, arg}
+      # {HackerNews.Worker, arg},
+      HackerNews.Periodically
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -7,7 +7,7 @@ defmodule HackerNewsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_hacker_news_key",
-    signing_salt: "VApwVWmM"
+    signing_salt: "D3R5xx1p"
   ]
 
   socket "/socket", HackerNewsWeb.UserSocket,

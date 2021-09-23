@@ -23,7 +23,8 @@ defmodule HackerNewsWeb.Router do
   scope "/api", HackerNewsWeb do
     pipe_through :api
 
-    get "/news", NewController, :index
+    resources "/news", HackerNewController, only: [:index, :show]
+    get "/news/:id", HackerNewController, :index
   end
 
   # Enables LiveDashboard only for development
