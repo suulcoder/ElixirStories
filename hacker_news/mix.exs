@@ -46,7 +46,8 @@ defmodule HackerNews.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:phoenix_pagination, "~> 0.7.0"}
     ]
   end
 

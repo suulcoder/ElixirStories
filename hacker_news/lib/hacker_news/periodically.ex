@@ -39,13 +39,13 @@ defmodule HackerNews.Periodically do
                 type: data["type"],
                 url: data["url"]
               }
-            {:ok, %HTTPoison.Response{status_code: 404}} ->
+            {:ok, %HTTPoison.Response{status_code: 400}} ->
               IO.puts "Fetch error"
             {:error, %HTTPoison.Error{reason: reason}} ->
               IO.inspect reason
           end
         end
-      {:ok, %HTTPoison.Response{status_code: 404}} ->
+      {:ok, %HTTPoison.Response{status_code: 400}} ->
         IO.puts "Fetch error"
       {:error, %HTTPoison.Error{reason: reason}} ->
         IO.inspect reason

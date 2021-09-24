@@ -1,14 +1,21 @@
 defmodule HackerNewsWeb.HackerNewController do
   use HackerNewsWeb, :controller
 
+  alias HackerNews.Repo
   alias HackerNews.Story
   alias HackerNews.Story.HackerNew
 
   action_fallback HackerNewsWeb.FallbackController
 
-  def index(conn, _params) do
-    hackernews = Story.list_hackernews()
-    render(conn, "index.json", hackernews: hackernews)
+  def index(conn, params) do
+    if params != %{} do
+      {hackernews, pagination} =  HackerNew
+      |> Repo.paginate(params)
+      render(conn, "pagination.json", products: hackernews, pagination: pagination)
+    else
+      hackernews = Story.list_hackernews()
+      render(conn, "index.json", hackernews: hackernews)
+    end
   end
 
   def create(conn, %{"hacker_new" => hacker_new_params}) do

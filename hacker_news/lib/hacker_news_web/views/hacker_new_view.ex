@@ -1,5 +1,6 @@
 defmodule HackerNewsWeb.HackerNewView do
   use HackerNewsWeb, :view
+  import Phoenix.Pagination.JSON
   alias HackerNewsWeb.HackerNewView
 
   def render("index.json", %{hackernews: hackernews}) do
@@ -8,6 +9,11 @@ defmodule HackerNewsWeb.HackerNewView do
 
   def render("show.json", %{hacker_new: hacker_new}) do
     %{data: render_one(hacker_new, HackerNewView, "hacker_new.json")}
+  end
+
+  def render("pagination.json", %{products: products, pagination: pagination, conn: conn}) do
+    %{data: render_many(products, HackerNewsWeb.HackerNewView, "hacker_new.json"),
+      pagination: paginate(conn, pagination)}
   end
 
   def render("hacker_new.json", %{hacker_new: hacker_new}) do
