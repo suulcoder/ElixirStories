@@ -39,7 +39,6 @@ defmodule HackerNews.Periodically do
                 type: data["type"],
                 url: data["url"]
               }
-              IO.puts "DATA FETCHED"
             {:ok, %HTTPoison.Response{status_code: 404}} ->
               IO.puts "Fetch error"
             {:error, %HTTPoison.Error{reason: reason}} ->
