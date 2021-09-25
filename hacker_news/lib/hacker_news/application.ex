@@ -17,7 +17,8 @@ defmodule HackerNews.Application do
       HackerNewsWeb.Endpoint,
       # Start a worker by calling: HackerNews.Worker.start_link(arg)
       # {HackerNews.Worker, arg},
-      HackerNews.Periodically
+      HackerNews.Periodically,
+      {Riverside, [handler: HackerNews.StoryWebSocket]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

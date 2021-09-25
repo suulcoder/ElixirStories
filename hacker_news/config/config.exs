@@ -18,6 +18,19 @@ config :hacker_news, HackerNewsWeb.Endpoint,
   pubsub_server: HackerNews.PubSub,
   live_view: [signing_salt: "QawNUtLx"]
 
+config :hacker_news, HackerNews.StoryWebSocket,
+  port: 3500,
+  path: "/api",
+  max_connections: 10000, # don't accept connections if server already has this number of connections
+  max_connection_age: :infinity, # force to disconnect a connection if the duration passed. if :infinity is set, do nothing.
+  idle_timeout: 120_000, # disconnect if no event comes on a connection during this duration
+  reuse_port: false, # TCP SO_REUSEPORT flag
+  show_debug_logs: false,
+  transmission_limit: [
+    capacity: 50,  # if 50 frames are sent on a connection
+    duration: 2000 # in 2 seconds, disconnect it.
+  ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

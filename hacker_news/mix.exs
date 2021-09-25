@@ -48,6 +48,7 @@ defmodule HackerNews.MixProject do
       {:httpoison, "~> 1.5"},
       {:poison, "~> 3.1"},
       {:phoenix_pagination, "~> 0.7.0"},
+      {:riverside, "~> 1.2.6"}
     ]
   end
 
