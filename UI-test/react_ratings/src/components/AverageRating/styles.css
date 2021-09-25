@@ -1,0 +1,14 @@
+.average_title{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.average_title_text {
+    margin-right: 32px;
+}
+
+p {
+    text-align: center;
+}

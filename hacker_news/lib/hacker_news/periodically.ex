@@ -22,7 +22,8 @@ defmodule HackerNews.Periodically do
         body = String.replace(body, "]", "")
         body = String.replace(body, "[", "")
         body = String.split(body, ",")
-        for id <- body do
+        for id_ <- body do
+          id = String.replace(id_,"\n", "")
           url = "https://hacker-news.firebaseio.com/v0/item/#{id}.json?print=pretty"
           case HTTPoison.get(url) do
             {:ok, %HTTPoison.Response{status_code: 200, body: response_}} ->

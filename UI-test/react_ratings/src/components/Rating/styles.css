@@ -1,0 +1,21 @@
+.rating_title{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.rating {
+    border: black solid;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 16px;
+}
+
+.rating:last-child {
+    margin-bottom: 0px;
+}
+
+p {
+    text-align: center;
+}

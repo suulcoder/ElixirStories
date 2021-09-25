@@ -1,0 +1,36 @@
+.section {
+    margin-top: 32px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #55b4cb;
+}
+
+.section_img {
+    border: black solid;
+    height: 400px;
+    margin: 4px;
+    margin-right: 16px;
+    margin-left: 16px;
+    width: 50%;
+}
+
+.section_content {
+    align-items: flex-start;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    text-align: start;
+    width: 50%;
+}
+
+.section_title {
+    max-width: 200px;
+}
+
+.section_text {
+    max-width:  500px;
+}
